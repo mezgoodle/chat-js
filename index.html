@@ -63,7 +63,7 @@
 
             form.submit((event) => {
                 event.preventDefault();
-                socket.emit('send mess', textarea.val());
+                socket.emit('send_mess', textarea.val());
                 textarea.val('');
             });
         })
