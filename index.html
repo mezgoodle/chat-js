@@ -53,11 +53,13 @@
         </div>
     </div>
     <!-- Connect jQuery and Socket.io -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         $(() => {
             let socket = io.connect();
+            let form = getElementById('#messForm');
+            let input = getElementById('#message');
+            let all_messages = getElementById('#all_mes');
         })
     </script>
 </body>
