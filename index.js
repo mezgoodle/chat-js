@@ -25,4 +25,8 @@ io.sockets.on('connection', (socket) => {
         connections.splice(connections.indexOf(socket), 1);
         console.log('Success disconnection');
     });
+
+    socket.on('send_mess', (data) => {
+        io.sockets.emit('add_mess', { msg: data });
+    });
 });
