@@ -1,3 +1,4 @@
+// Connect modules
 let express = require('express');
 let app = express();
 let server = require('http').createServer(app);
@@ -5,28 +6,25 @@ let io = require('socket.io').listen(server);
 
 server.listen(3000);
 
-// Main page
-app.get('/', (request, response) => {
-    response.sendFile(__dirname + '/index.html');
+// Listen main page
+app.get('/', function(request, respons) {
+    respons.sendFile(__dirname + '/index.html');
 });
 
-// Variables
-let
-    users = [],
-    connections = [];
+// All connections
+connections = [];
 
-// Connection
+// Listen new connection
 io.sockets.on('connection', (socket) => {
-    console.log('Success connection');
     connections.push(socket);
 
-    // Disconnection
+    // Listen disconnect
     socket.on('disconnect', (data) => {
         connections.splice(connections.indexOf(socket), 1);
-        console.log('Success disconnection');
     });
 
     socket.on('send_mess', (data) => {
-        io.sockets.emit('add_mess', { msg: data });
+        io.sockets.emit('add_mess', { mess: data.mess, name: data.name, className: data.className });
     });
+
 });
