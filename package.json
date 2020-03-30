@@ -1,23 +1,23 @@
 {
-  "name": "chat",
-  "version": "1.0.0",
-  "description": "chat on socket.io",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mezgoodle/chat-js.git"
-  },
-  "author": "mezgoodle",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mezgoodle/chat-js/issues"
-  },
-  "homepage": "https://github.com/mezgoodle/chat-js#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^2.3.0"
-  }
+    "name": "chat",
+    "version": "1.0.0",
+    "description": "chat on socket.io",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mezgoodle/chat-js.git"
+    },
+    "author": "mezgoodle",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mezgoodle/chat-js/issues"
+    },
+    "homepage": "https://github.com/mezgoodle/chat-js#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "socket.io": "^2.3.0"
+    }
 }
