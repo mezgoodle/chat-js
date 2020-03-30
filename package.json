@@ -1,0 +1,19 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "chat on socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mezgoodle/chat-js.git"
+  },
+  "author": "mezgoodle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mezgoodle/chat-js/issues"
+  },
+  "homepage": "https://github.com/mezgoodle/chat-js#readme"
+}
