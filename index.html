@@ -56,7 +56,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        // Random num for styling
         let min = 1;
         let max = 6;
         let random = Math.floor(Math.random() * (max - min)) + min;
@@ -92,10 +91,10 @@
 
             $form.submit((event) => {
                 event.preventDefault();
-                socket.emit('send _mess', {
+                socket.emit('send_mess', {
                     mess: $textarea.val(),
                     name: $name.val(),
-                    className: alertClass,
+                    className: alertClass
                 });
                 $textarea.val('');
             });
