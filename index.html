@@ -66,6 +66,10 @@
                 socket.emit('send_mess', textarea.val());
                 textarea.val('');
             });
+
+            socket.on('add_mess', (data) => {
+                all_messages.innerHTML += "<div>" + data.msg + "</div>";
+            });
         })
     </script>
 </body>
