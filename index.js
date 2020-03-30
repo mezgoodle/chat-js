@@ -12,3 +12,7 @@ app.get('/', (request, response) => {
 let
     users = [],
     connections = [];
+
+io.sockets.on('connection', (socket) => {
+    connections.push(socket);
+});
