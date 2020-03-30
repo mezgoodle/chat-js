@@ -5,14 +5,22 @@ let io = require('socket.io').listen(server);
 
 server.listen(3000);
 
+// Main page
 app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html');
 });
 
+// Variables
 let
     users = [],
     connections = [];
 
+// Connection
 io.sockets.on('connection', (socket) => {
     connections.push(socket);
+
+    // Disconnection
+    socket.on('disconnect', (data) => {
+        connections.splice(connections.indexOf(socket), 1)
+    });
 });
