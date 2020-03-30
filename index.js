@@ -4,7 +4,8 @@ let app = express();
 let server = require('http').createServer(app);
 let io = require('socket.io').listen(server);
 
-server.listen(3000);
+const PORT = process.env.PORT || 80
+server.listen(PORT);
 
 // Listen main page
 app.get('/', function(request, respons) {
