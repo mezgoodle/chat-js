@@ -17,10 +17,12 @@ let
 
 // Connection
 io.sockets.on('connection', (socket) => {
+    console.log('Success connection');
     connections.push(socket);
 
     // Disconnection
     socket.on('disconnect', (data) => {
-        connections.splice(connections.indexOf(socket), 1)
+        connections.splice(connections.indexOf(socket), 1);
+        console.log('Success disconnection');
     });
 });
