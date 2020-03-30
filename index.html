@@ -42,7 +42,7 @@
                     <label for="message">Message</label>
                     <textarea name="message" id="message" class="form-control" placeholder="Enter your message"></textarea>
                     <br>
-                    <input type="submit" value="Отправить" class="btn btn-danger">
+                    <input type="submit" value="Send" class="btn btn-danger">
                 </form>
             </div>
             <div class="col-6">
@@ -58,8 +58,14 @@
         $(() => {
             let socket = io.connect();
             let form = getElementById('#messForm');
-            let input = getElementById('#message');
+            let textarea = getElementById('#message');
             let all_messages = getElementById('#all_mes');
+
+            form.submit((event) => {
+                event.preventDefault();
+                socket.emit('send mess', textarea.val());
+                textarea.val('');
+            });
         })
     </script>
 </body>
